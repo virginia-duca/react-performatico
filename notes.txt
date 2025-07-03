@@ -1,0 +1,49 @@
+Dashboard de Exploração de Espaço e Astronomia
+  Tema:
+    -"Space Explorer" — Um painel interativo para explorar missões espaciais, asteroides próximos, imagens astronômicas do dia, e dados de planetas.
+
+  Funcionalidades:
+    -Página inicial: Destaques do dia (imagem astronômica, missões em andamento)
+    -Lista de missões espaciais: Filtros por agência, status, ano, etc.
+    -Detalhe de missão: Informações detalhadas, tripulação, objetivos, links externos
+    -Asteroides próximos à Terra: Lista e detalhes, com filtros por tamanho, distância, data
+    -Galeria de imagens astronômicas: Code-splitting para carregar imagens sob demanda
+    -Busca e favoritos: Salvar missões ou imagens favoritas (localStorage)
+
+APIs Gratuitas e Diferentes:
+  NASA Open APIs:
+    https://api.nasa.gov/
+      Exemplos:
+        -Asteroids - NeoWs (dados de asteroides próximos)
+        https://api.nasa.gov/
+        https://api.nasa.gov/neo/rest/v1/feed?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD&api_key=DEMO_KEY
+        
+        -APOD - Astronomy Picture of the Day
+        https://api.nasa.gov/
+        https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+
+        -Mars Rover Photos
+        https://api.nasa.gov/
+
+        -Exoplanet Archive
+        https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html
+        https://ll.thespacedevs.com/2.2.0/launch/
+        
+  Launch Library 2:
+    -Launch Library 2 API
+    https://thespacedevs.com/llapi
+    Dados de lançamentos espaciais, missões, agências, etc.
+
+Como aplicar as técnicas:
+
+  -React.lazy/Suspense: Carregar páginas de detalhes ou galerias sob demanda
+  -React.memo/useMemo: Listas de missões, asteroides, filtros pesados
+  -useCallback: Handlers de filtros, favoritos, busca
+  -Code-splitting: Separar rotas/páginas
+  -Virtualização de listas (opcional): Para listas grandes de missões ou asteroides
+
+Por que é diferente?
+Não é um CRUD simples
+Tem dados ricos, visuais e interativos
+Permite explorar várias técnicas de performance
+Tema interessante e educativo
