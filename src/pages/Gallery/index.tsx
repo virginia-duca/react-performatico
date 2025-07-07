@@ -30,8 +30,8 @@ const Gallery = () => {
       <GalleryGrid>
         {pics
           .filter((pic) => pic.media_type === "image")
-          .map((pic, idx) => (
-            <GalleryItem key={idx}>
+          .map((pic) => (
+            <GalleryItem key={pic.url}>
               <img
                 src={pic.url}
                 alt={pic.title}
