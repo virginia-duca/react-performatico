@@ -4,7 +4,7 @@
 const NASA_API_KEY = "6YHjTz5cjmd99vFzpho0CcIKubv76jMYDZdjXO8o";
 export const CONNECTION = {
   NASA_URL: "https://api.nasa.gov",
-  ASTEROIDS_URL: "https://api.nasa.gov/neo/rest/v1/feed",
+  ASTEROIDS_URL: `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${NASA_API_KEY}`,
   APOD_URL: `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`,
   MARS_ROVER_URL:
     "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos",

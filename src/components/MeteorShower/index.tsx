@@ -1,4 +1,5 @@
 import { Star, Meteor, ShowerContainer } from "./style";
+import React from "react";
 
 function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -32,4 +33,4 @@ function getRandomInt(min: number, max: number) {
   );
 };
 
-export default MeteorShower
+export default React.memo(MeteorShower)
