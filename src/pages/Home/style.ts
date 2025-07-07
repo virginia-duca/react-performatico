@@ -24,12 +24,37 @@ export const FotoSection = styled.section<SectionProps>`
   color: #fff;
 `;
 
-export const SectionContainer = styled.section`
-  height: 100vh;
+export const SectionContainer = styled.div`
+  height: 100%;
   width: 100vw;
   background: transparent;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 `;
+
+export const Title = styled.h2`
+  font-size: 36px;
+  letter-spacing: 10px;
+  font-weight: 300;
+  margin-top: 50px;
+  text-align: center;
+  .bolder {
+    font-weight: 800;
+  }
+`
+
+export const CardsContainer = styled.div`
+  height: 50%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+`
 
 export const Gradient = styled.div`
   background: hsla(0, 0%, 0%, 1);

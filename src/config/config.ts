@@ -10,7 +10,7 @@ export const CONNECTION = {
     "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos",
   EXOPLANET_URL:
     "https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html",
-  LAUNCH_LIBRARY_URL: "https://ll.thespacedevs.com/2.2.0/launch/",
+  LAUNCH_LIBRARY_URL: "https://ll.thespacedevs.com/2.3.0/launches/?mode=list&limit=50",
 };
 
 export const PALLETE = {
@@ -20,9 +20,11 @@ export const PALLETE = {
     skyBlue: "#0090bb", // azul céu
     aqua: "#00b9bf", // azul água/água-marinha
     neonGreen: "#00e2b8", // verde neon/azul esverdeado
-    deepPurple: '#443e84',
-    lightGrey: '#ada9bb',
-    darkGrey: '#797586',
+    deepPurple: '#7116BB',
+    grey: '#424242',
+    lightGrey: '#303030',
+    darkGrey: '#212121',
+    dark: '#121212',
     black: '#000',
     white: '#fff'
 };
