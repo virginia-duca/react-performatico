@@ -8,20 +8,49 @@ import medium from "../../assets/medium.png";
 import small from "../../assets/small.png";
 import xsmall from "../../assets/xsmall.png";
 
+interface EstimatedDiameter {
+  meters: {
+    estimated_diameter_max: number;
+  };
+  kilometers: {
+    estimated_diameter_max: number;
+  };
+}
+
+interface CloseApproachData {
+  miss_distance: {
+    kilometers: string;
+  };
+  relative_velocity: {
+    kilometers_per_hour: string;
+  };
+  close_approach_date: string;
+}
+
+interface Asteroid {
+  id: string;
+  name_limited: string;
+  estimated_diameter: EstimatedDiameter;
+  absolute_magnitude_h: number;
+  close_approach_data: CloseApproachData[];
+  is_potentially_hazardous_asteroid: boolean;
+  image: string;
+  approach?: {
+    close_approach_date: string;
+  };
+}
+
 const Asteroids = () => {
-  const [astros, setAstros] = useState<
-    Array<{ image: string; [key: string]: any }>
-  >([]);
+  const [astros, setAstros] = useState<Asteroid[]>([]);
   const [selectedId, setSelectedId] = useState<string>("");
 
   useEffect(() => {
     axios
       .get(CONNECTION.ASTEROIDS_URL)
       .then((res) => {
-        const formated = res.data.near_earth_objects.map((aster: any) => {
+        const formated: Asteroid[] = res.data.near_earth_objects.map((aster: Asteroid) => {
           let image;
-          const { estimated_diameter_max } =
-            aster.estimated_diameter.kilometers;
+          const { estimated_diameter_max } = aster.estimated_diameter.kilometers;
           if (estimated_diameter_max < 15) {
             image = xsmall;
           } else if (estimated_diameter_max < 30) {

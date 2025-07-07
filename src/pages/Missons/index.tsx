@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CONNECTION, PALLETE } from "../../config/config";
 import { Section } from "./style";
 import MissionsTable from "./MissionTable";
@@ -18,21 +18,16 @@ const Missions = () => {
   const [filter, setFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
 
-  const getMissions = useCallback(() => {
+  
+  useEffect(() => {
     axios
       .get(CONNECTION.LAUNCH_LIBRARY_URL)
       .then((res) => {
-        console.log(res);
         setAllMissions(res.data.results);
       })
       .catch((err) => {
         console.log(err);
       });
-
-  },[])
-
-  useEffect(() => {
-    getMissions()
   }, []);
 
   const statusOptions = useMemo(() => {

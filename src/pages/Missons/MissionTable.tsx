@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Collapsable, Table } from "./style";
+import React from "react";
+import { Table } from "./style";
 
 interface Mission {
   id: string;
@@ -18,11 +18,6 @@ interface MissionsTableProps {
 }
 
 const MissionsTable: React.FC<MissionsTableProps> = ({ missions }) => {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
-  const handleToggle = (id: string) => {
-    setOpenDropdown((prev) => (prev === id ? null : id));
-  };
 
   return (
     <Table style={{ width: "100%", borderCollapse: "collapse" }}>

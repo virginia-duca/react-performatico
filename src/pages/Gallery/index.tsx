@@ -1,23 +1,27 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { GalleryGrid, GalleryItem } from "./style";
 import { CONNECTION } from "../../config/config";
 import { Section } from "./style";
 
+interface NasaImage {
+  url: string;
+  title: string;
+  media_type: string;
+}
+
 const Gallery = () => {
-  const [pics, setPics] = useState([]);
+  const [pics, setPics] = useState<NasaImage[]>([]);
 
   useEffect(() => {
-      axios
-        .get(`${CONNECTION.APOD_URL}&count=30`)
-        .then((res) => {
-          console.log(res);
-          setPics(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    // }
+    axios
+      .get(`${CONNECTION.APOD_URL}&count=30`)
+      .then((res) => {
+        setPics(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
@@ -25,8 +29,8 @@ const Gallery = () => {
       <h3 className="gal-title">Galeria</h3>
       <GalleryGrid>
         {pics
-          .filter((pic: any) => pic.media_type === "image")
-          .map((pic: any, idx: number) => (
+          .filter((pic) => pic.media_type === "image")
+          .map((pic, idx) => (
             <GalleryItem key={idx}>
               <img
                 src={pic.url}

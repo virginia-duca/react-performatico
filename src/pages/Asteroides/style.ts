@@ -87,7 +87,7 @@ export const InfoCard = styled.div<CardProp>`
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    height: ${(props: any) => {
+    height: ${(props) => {
       if (props.open) return "180px";
       return '0px'
     }};

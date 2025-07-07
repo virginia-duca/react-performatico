@@ -4,12 +4,7 @@ import { SidebarContainer, SidebarContent, Overlay, MenuButton, MenuItem } from 
 interface SidebarProps {
   open: boolean;
   onClose: () => void;
-  children: any
-}
-
-interface MenuProp {
-  setOpen: (arg0: boolean) => void;
-  open: boolean
+  children: React.ReactNode;
 }
 
  const Sidebar: React.FC<SidebarProps> = ({ open, onClose, children }) => (

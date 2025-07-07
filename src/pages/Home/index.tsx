@@ -1,14 +1,13 @@
 import axios from "axios";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import spaceBg from "../../assets/earth.jpg";
 import iss from "../../assets/ISS.jpg";
 import aster from "../../assets/asteroids.jpg";
 import { CONNECTION } from "../../config/config";
-import { IntroCard, Loading, Menu, MeteorShower } from "../../components";
+import { IntroCard } from "../../components";
 import {
   FotoSection,
   SectionContainer,
-  Gradient,
   Title,
   CardsContainer,
 } from "./style";
