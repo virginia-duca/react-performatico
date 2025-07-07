@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { Home, Missions } from "../pages";
+import { Home, Missions, Asteroids } from "../pages";
 import { GlobalStyle } from "../components/styles/GlobalStyle";
 import { Loading, Menu } from "../components";
 import { Suspense, lazy } from "react";
@@ -32,6 +32,7 @@ function App() {
                 </Suspense>
               }
             />
+            <Route path="/asteroides" element={<Asteroids />} />
           </Route>
         </Routes>
       </BrowserRouter>

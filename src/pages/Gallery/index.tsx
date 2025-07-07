@@ -31,6 +31,7 @@ const Gallery = () => {
               <img
                 src={pic.url}
                 alt={pic.title}
+                loading="lazy"
                 style={{
                   height: "100%",
                   objectFit: "cover",

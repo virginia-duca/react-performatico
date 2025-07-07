@@ -5,9 +5,10 @@ Um dashboard interativo para exploração de espaço e astronomia, desenvolvido 
 ## Preview
 
 <p align="center">
-  <img src="./src/assets/preview3.png" alt="Galeria" width="32%"/>
-  <img src="./src/assets/preview1.png" alt="Home" width="32%"/>
-  <img src="./src/assets/preview2.png" alt="Missões" width="32%"/>
+  <img src="./src/assets/preview3.png" alt="Galeria" width="22%"/>
+  <img src="./src/assets/preview1.png" alt="Home" width="22%"/>
+  <img src="./src/assets/preview2.png" alt="Missões" width="22%"/>
+  <img src="./src/assets/preview4.png" alt="Missões" width="26%"/>
 </p>
 
 ## Tema do Projeto
