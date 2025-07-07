@@ -1,69 +1,59 @@
-# React + TypeScript + Vite
+# Space Explorer 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um dashboard interativo para exploração de espaço e astronomia, desenvolvido em React + TypeScript + Vite.
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img src="./src/assets/preview3.png" alt="Galeria" width="32%"/>
+  <img src="./src/assets/preview1.png" alt="Home" width="32%"/>
+  <img src="./src/assets/preview2.png" alt="Missões" width="32%"/>
+</p>
 
-## Expanding the ESLint configuration
+## Tema do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O **Space Explorer** é um painel para explorar missões espaciais, asteroides próximos à Terra, imagens astronômicas do dia e dados de planetas. O objetivo é criar uma aplicação rica, visual e educativa, utilizando dados reais de APIs públicas como NASA e Launch Library 2.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
+- **Página inicial:** Destaques do dia (imagem astronômica, missões em andamento)
+- **Lista de missões espaciais:** Filtros por agência, status, ano, etc.
+- **Detalhe de missão:** Informações detalhadas, tripulação, objetivos, links externos
+- **Asteroides próximos à Terra:** Lista e detalhes, com filtros por tamanho, distância, data
+- **Galeria de imagens astronômicas:** Carregamento sob demanda de imagens do APOD (NASA)
+- **Busca e favoritos:** Salvar missões ou imagens favoritas (localStorage)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## APIs Utilizadas
+- [NASA Open APIs](https://api.nasa.gov/)
+  - Asteroids - NeoWs
+  - APOD - Astronomy Picture of the Day
+  - Mars Rover Photos
+  - Exoplanet Archive
+- [Launch Library 2](https://thespacedevs.com/llapi)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Objetivo de Performance
+Este projeto foi criado para **aplicar e demonstrar técnicas de performance em React**, incluindo:
+- **React.memo** e **useMemo**: Memoização de listas, filtros e componentes pesados
+- **useCallback**: Handlers de filtros, favoritos e busca
+- **React.lazy** e **Suspense**: Code-splitting e carregamento sob demanda de páginas e componentes
+- **Code-splitting**: Separação de rotas e páginas em chunks
+- **Virtualização de listas** (opcional): Para listas grandes de missões ou asteroides
+
+## Por que é diferente?
+- Não é um CRUD simples
+- Tem dados ricos, visuais e interativos
+- Permite explorar várias técnicas de performance
+- Tema interessante e educativo
+
+## Como rodar o projeto
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse [http://localhost:5173](http://localhost:5173) no navegador.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Este projeto é um laboratório para estudo e demonstração de boas práticas de performance em aplicações React modernas.
+
