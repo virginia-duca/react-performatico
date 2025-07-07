@@ -39,7 +39,6 @@ Este projeto foi criado para **aplicar e demonstrar técnicas de performance em 
 - **Virtualização de listas** (opcional): Para listas grandes de missões ou asteroides
 
 ## Por que é diferente?
-- Não é um CRUD simples
 - Tem dados ricos, visuais e interativos
 - Permite explorar várias técnicas de performance
 - Tema interessante e educativo
