@@ -1,5 +1,11 @@
-import React, { useState} from "react";
-import { SidebarContainer, SidebarContent, Overlay, MenuButton, MenuItem } from "./style";
+import React, { useState } from "react";
+import {
+  SidebarContainer,
+  SidebarContent,
+  Overlay,
+  MenuButton,
+  MenuItem,
+} from "./style";
 
 interface SidebarProps {
   open: boolean;
@@ -7,11 +13,14 @@ interface SidebarProps {
   children: React.ReactNode;
 }
 
- const Sidebar: React.FC<SidebarProps> = ({ open, onClose, children }) => (
+interface MenuButtonProps {
+  onClick: () => void;
+}
+
+const Sidebar = ({ open, onClose, children }: SidebarProps) => (
   <>
     <SidebarContainer $open={open}>
       <SidebarContent>
-        {/* <button onClick={onClose} style={{ marginBottom: 32 }}>Fechar ✖</button> */}
         {children}
       </SidebarContent>
     </SidebarContainer>
@@ -19,7 +28,7 @@ interface SidebarProps {
   </>
 );
 
- const SidebarMenuButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
+const SidebarMenuButton = ({ onClick }: MenuButtonProps) => (
   <MenuButton onClick={onClick}>☰</MenuButton>
 );
 
@@ -29,18 +38,15 @@ const Menu = () => {
   return (
     <>
       <SidebarMenuButton onClick={() => setSidebarOpen(true)} />
-        
+
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}>
         <MenuItem to="/">Início</MenuItem>
         <MenuItem to="/missoes">Missões</MenuItem>
         <MenuItem to="/asteroides">Asteroides</MenuItem>
         <MenuItem to="/galeria">Galeria</MenuItem>
       </Sidebar>
-      {/* ...restante do seu conteúdo */}
     </>
   );
-}
+};
 
-export default Menu
-
-
+export default Menu;

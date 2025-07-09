@@ -68,4 +68,4 @@ const MissionsTable: React.FC<MissionsTableProps> = ({ missions }) => {
   );
 };
 
-export default MissionsTable;
+export default React.memo(MissionsTable);
